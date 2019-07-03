@@ -1,0 +1,15 @@
+cmd
+cmd ..
+cmd ../..
+pwd
+ssh
+sudo su
+ls
+ls -a
+ls -l
+makedir
+vi
+vi <enter file name>.py (for python)
+nano
+clear
+bash
