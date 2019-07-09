@@ -100,3 +100,18 @@ for l in f:
         print("decrypted: {}".format(l))
         exit()
 print("nope")
+----------------------------------------------------------------------------------------
+(beta)
+import random
+def shuffleit():
+    random.shuffle(coin)
+    return coin[1]
+
+guess=input("You are fighting a cyclops. What weapon do you choose? [sickle, great sword, katana, spear, duel blades] ")
+coin=["sickle","great sword","katana","spear","duel blades"]
+while guess != coin[1]:
+    print("The cyclops begins to glow and wipes your whole squad in one go. Try again hahahah")
+    if guess==coin[1]:
+        print("You Swing your mighty weapon with all your might and ends up beheading the beast proceed to the next room young adveturer! ")
+    else:
+        guess=input("Try Again")
