@@ -1,0 +1,102 @@
+import random
+
+guess=input("What sword do you choose? [sickle, great sword, katana] ")
+coin=["sickle","great sword","katana"]
+random.shuffle(coin)
+while guess != coin[1]:
+    print("Better luck next time mate")
+    guess=input("What sword do you choose? [sickle, great sword, katana] ")
+    print("You Win Flawless Victory")
+    --------------------------------------------------------------------------------------------
+    swagg=input("How much swagg you got? ")
+if int(swagg) == 100:
+    print("swagg man")
+elif int(swagg)>100:
+    print("swagg master")
+elif int(swagg) <100 and int(swagg)!=0:
+    print("swagg nooblet")
+elif int(swagg) ==0:
+    print ("You got no swagg my boi")
+    ----------------------------------------------------------------------------------------------
+    f=open("10k most common.txt",'r')
+for lines in f:
+    lines.rstrip()
+    if lines !="":
+        print(lines)
+    -----------------------------------------------------------------------------------------------
+    # python3.7
+# coding: utf-8
+
+# store the human preproinsulin sequence in a variable called preproinsulin:
+preproInsulin="malwmrllpllallalwgpdpaaafvnqhlcgshlvealylvcgergffytpktrreaedlqvgqvelgggpgaagslqplalegslqkrgivecctsicslyqlenycn"
+# store the remaing sequence elements of human insulin in variables:
+lsInsulin = "malwmrllpllallalwgpdpaaa"
+bInsulin = "fvnqhlcgshlvealylvcgeergffytpkt"
+aInsulin = "giveqcctsicslyqlenycn"
+cInsulin = "rreaedlqvgqvelgggpgagslqplalegslqkr"
+insulin = bInsulin + aInsulin
+pKR = {}
+pKR={'y':10.07,'c':8.18,'k':10.53,'h':6.00,'r':12.48,'d':3.65,'e':4.25}
+insulin.count("y")
+float(insulin.count("y"))
+seqCount=({x:float(insulin.count(x)) for x in ['y','c','k','h','r','d','e']})
+pH = 0
+netCharge = (
+    +(sum({x: ((seqCount[x]*(10**pKR[x]))/((10**pH)+(10*pKR[x]))) for x in ['k','h','r']}.values()))
+    -(sum({x: ((seqCount[x]*(10**pH))/((10**pH)+(10**pKR[x]))) for x in ['y','c','d','e']}.values()))
+)
+while (pH<=14):
+    print('{0:.2f}'.format(pH), netCharge)
+    pH += 1
+-----------------------------------------------------------------------------------------------------------------
+def getDoubleAlphabet(alphabet):
+    doubleAlphabet = alphabet + alphabet
+    return doubleAlphabet
+def getMessage():
+    stringToEncrypt = input("Please enter a message to encrypt: ")
+    return strintToEncrypt
+def getCipherKey():
+    shiftAmount = input("Please enter a key (whole number from 1-25): ")
+    return shiftAmount
+def encryptMessage(message, cipherKey, alphabet):
+    encryptedMessage = ""
+    uppercaseMessage = ""
+    uppercaseMessage = message.upper()
+    for currentCharacter in uppercaseMessage:
+      position = alphabet.find(currentCharacter) newPosition = position + in(cipherKey)
+        if currentCharacter in alphabet:
+            encryptedMessage = encryptedMessage + alphabet[newPosition]
+            else:
+                encryptedMessage = encryptedMessage + currentCharacter
+        return encryptedMessage
+def decryptMessage(message, cipherKey, alphabet):
+    decryptKey = -1 * int(cipherKey)
+    return encryptMessage(message, decryptKey, alphabet)
+def runCeasarCipherProgram():
+    myAlphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    print(f'Alphabet: {myAlphabet}')
+    myAlphabet2 = getDoubleAlphabet(myAlphabet)
+    print(f'Alphabet2: {myAlphabet2}')
+    myMessage = getMessage()
+    print(myMessage)
+    myCipherKey = getCipherKey()
+print(myCipherKey)
+myEncryptedMessage = encryptMessage(myMessage, myCipherKey, myAlphabet2)
+print(f' Encrypted Message: {myEncryptedMessage}')
+myDecryptedMessage = decryptMessage(myEncryptedMessage, myCipherKey, myAlphabet2)
+print(f'Decrypted Message: {myDecryptionMessage}')
+----------------------------------------------------------------------------------
+import hashlib
+
+p=input("What is the hash you want to check?")
+f=open("10k most common.txt",'r')
+#get each line in the file
+#hash the lines
+#compare hashes
+for l in f:
+    h=hashlib.md5(l.encode("utf-8"))
+
+    if h.hexdigest()==p:
+        print("decrypted: {}".format(l))
+        exit()
+print("nope")
