@@ -1,0 +1,3 @@
+SELECT useridentity.userName, eventtime, eventsource, eventname, requestparameters
+FROM cloudtrail_logs_monitoring0001
+LIMIT 30
